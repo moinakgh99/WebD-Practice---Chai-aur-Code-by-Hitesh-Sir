@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Oswald", sans-serif;
+}
+
+.container{
+    background: linear-gradient(135deg , #8a2be1, #4169e1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content{
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 5px;
+    max-width: 400px;
+}
+
+.logo{
+    width: 120px;
+    height: 100px;
+    object-fit: contain;
+    padding: 0.8rem;
+}
+
+p{
+    padding: 0.8rem;
+    color: #571a1a;
+}
+
+h1{
+    color: #333;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="email"]{
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+button{
+    padding: 0.5rem;
+    background-color: #4169e1;
+    color: aliceblue;
+    border-radius: 5px;
+    border: 1px solid yellow;
+    cursor: pointer;
+    transition: background-color 0.9s ease-in-out;
+    box-shadow: 2px 2px 2px 2px rgb(51, 39, 81);
+}
+
+button:hover{
+    background-color: #270737;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weathix Weather-App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <!-- Animated background particles canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Floating orbs for atmosphere -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="container">
+
+      <!-- Header -->
+      <div class="app-header">
+        <div class="logo-mark">
+          <span class="logo-icon">◎</span>
+          <span class="logo-text">Weathix</span>
+        </div>
+        <p class="app-tagline">Real-time weather intelligence</p>
+      </div>
+
+      <!-- Search -->
+      <div class="input-container">
+        <div class="input-wrapper">
+          <span class="search-icon">⌕</span>
+          <input type="text" id="city-input" placeholder="Search city…" autocomplete="off" />
+          <div class="input-glow-line"></div>
+        </div>
+        <button id="get-weather-btn">
+          <span class="btn-text">Search</span>
+          <span class="btn-icon">→</span>
+          <div class="btn-ripple"></div>
+        </button>
+      </div>
+
+      <!-- Weather Info -->
+      <div id="weather-info" class="hidden">
+
+        <!-- City & date -->
+        <div class="weather-header">
+          <div class="city-row">
+            <h2 id="city-name"></h2>
+            <span class="country-badge" id="country-badge"></span>
+          </div>
+          <p class="weather-date" id="weather-date"></p>
+        </div>
+
+        <!-- Main temp display -->
+        <div class="temp-display">
+          <div class="weather-icon-wrap">
+            <span class="weather-icon-main" id="weather-icon-main">☀️</span>
+            <div class="icon-ring"></div>
+            <div class="icon-pulse"></div>
+          </div>
+          <div class="temp-group">
+            <p id="temperature"></p>
+            <p id="description"></p>
+          </div>
+        </div>
+
+        <!-- Stats grid -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-icon">💧</span>
+            <span class="stat-value" id="humidity">—</span>
+            <span class="stat-label">Humidity</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">🌬️</span>
+            <span class="stat-value" id="wind-speed">—</span>
+            <span class="stat-label">Wind</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">🌡️</span>
+            <span class="stat-value" id="feels-like">—</span>
+            <span class="stat-label">Feels Like</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">👁️</span>
+            <span class="stat-value" id="visibility">—</span>
+            <span class="stat-label">Visibility</span>
+          </div>
+        </div>
+
+        <!-- Sunrise / Sunset -->
+        <div class="sun-bar">
+          <div class="sun-item">
+            <span class="sun-icon">🌅</span>
+            <div>
+              <span class="sun-label">Sunrise</span>
+              <span class="sun-time" id="sunrise-time">—</span>
+            </div>
+          </div>
+          <div class="sun-track">
+            <div class="sun-track-fill" id="sun-track-fill"></div>
+            <div class="sun-dot" id="sun-dot"></div>
+          </div>
+          <div class="sun-item sun-item-right">
+            <span class="sun-icon">🌇</span>
+            <div>
+              <span class="sun-label">Sunset</span>
+              <span class="sun-time" id="sunset-time">—</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Error -->
+      <p id="error-message" class="hidden">
+        <span class="err-icon">⚠</span>
+        City not found. Please try again.
+      </p>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="animations.js"></script>
+  </body>
+</html>

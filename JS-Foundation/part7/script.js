@@ -1,0 +1,3 @@
+console.log("Hello !! from the JavaScript");
+console.log(document);
+
